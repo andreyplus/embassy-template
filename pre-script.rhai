@@ -29,6 +29,16 @@ let targets = #{
         ram_size: "256K"
     },
 
+    nrf54l15: #{
+        arch: "arm",
+        rust_target: "thumbv8m.main-none-eabihf",
+        probe_chip: "nRF54L15",
+	flash_start: "0x00000000",
+        flash_size: "1524K",
+        ram_start: "0x20000000",
+        ram_size: "256K"
+    },
+
     nrf9160: #{
         arch: "arm",
         rust_target: "thumbv8m.main-none-eabihf",
