@@ -10,6 +10,20 @@ from pathlib import Path
 from urllib.request import urlopen
 from urllib.error import URLError
 
+NON_STM32_CHIPS = [
+    "esp32c3",
+    "nrf9151",
+    "nrf9160",
+    "nrf54l15",
+    "nrf52833",
+    "nrf52840",
+    "rp2040",
+    "rp2350a",
+    "rp2350b",
+    "rp2354a",
+    "rp2354b",
+]
+
 
 def fetch_cargo_toml():
     """Fetch stm32-metapac/Cargo.toml from GitHub."""
@@ -59,19 +73,7 @@ def extract_stm32_chips(cargo_toml_content):
 
 def get_non_stm32_chips():
     """Return list of non-STM32 chips to preserve."""
-    return [
-        "esp32c3",
-        "nrf9151",
-        "nrf9160",
-        "nrf54l15",
-        "nrf52833",
-        "nrf52840",
-        "rp2040",
-        "rp2350a",
-        "rp2350b",
-        "rp2354a",
-        "rp2354b",
-    ]
+    return NON_STM32_CHIPS
 
 
 def update_cargo_generate_toml(file_path, all_chips):

@@ -11,3 +11,9 @@ cargo generate --git https://github.com/lulf/embassy-template.git
 ```
 
 Then follow the instructions.
+
+## Add new chip choices
+
+If you want to add a new chip choice, you can add it to the `NON_STM32_CHIPS` list in `scripts/update-chip-choices.py`.
+
+Then run the `update-chip-choices.py` script to update the `cargo-generate.toml` file or let the GitHub Actions workflow do it for you.
