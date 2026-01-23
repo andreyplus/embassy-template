@@ -26,6 +26,9 @@ CHIPS=(
     "rp2040"
     "rp2350a"
     "stm32h743zi"
+    # Below are some auto-generated chips
+    "stm32l053r8"
+    "stm32f373c8"
 )
 
 # Get the absolute path to the template directory
