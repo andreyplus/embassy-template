@@ -7,6 +7,9 @@ ignore = [
     ".github/workflows/ci.yml",
     ".github/workflows/issue_handler.yml",
     "README.md",
+    "scripts/update-chip-choices.py",
+    "scripts/README.md",
+    "CHIP-AUTO-GEN.md",
 ]
 
 [hooks]

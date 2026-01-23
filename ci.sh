@@ -25,8 +25,8 @@ CHIPS=(
     "nrf9160"
     "rp2040"
     "rp2350a"
-    "stm32h743zi"
     # Below are some auto-generated chips
+    "stm32h743zi"
     "stm32l053r8"
     "stm32f373c8"
 )
