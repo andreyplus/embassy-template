@@ -5,7 +5,7 @@ Simple template to generate a embassy project for a few common boards. Make sure
 ## Usage
 
 ```
-cargo generate --git https://github.com/lulf/embassy-template.git -d chip=<chip-name>
+cargo generate --git https://github.com/andreyplus/embassy-template.git -d chip=<chip-name>
 ```
 
 Then follow the instructions.
