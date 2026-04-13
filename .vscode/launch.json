@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "debug",
+            "type": "probe-rs-debug",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "chip": "{{ probe_chip }}",
+            "flashingConfig": {
+                "flashingEnabled": true,
+                "haltAfterReset": true,
+            },
+            "coreConfigs": [
+                {
+                    "rttEnabled": true,
+                    "programBinary": "./target/{{ rust_target }}/debug/${workspaceFolderBasename}"
+                }
+            ],
+            "preLaunchTask": "rust: cargo build"
+        },
+        {
+            "name": "attach",
+            "type": "probe-rs-debug",
+            "request": "attach",
+            "cwd": "${workspaceFolder}",
+            "chip": "{{ probe_chip }}",
+            "coreConfigs": [
+                {
+                    "rttEnabled": true,
+                    "programBinary": "./target/{{ rust_target }}/debug/${workspaceFolderBasename}"
+                }
+            ],
+        }
+    ]
+}
