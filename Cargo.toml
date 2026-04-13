@@ -43,8 +43,10 @@ embassy-time = { version = "0.5", features = [
 debug = 2
 lto = true
 opt-level = 'z'
+codegen-units = 1
 
 [profile.dev]
 debug = 2
 lto = true
 opt-level = "z"
+codegen-units = 1
