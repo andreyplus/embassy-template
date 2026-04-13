@@ -20,19 +20,13 @@ fi
 
 # Array of chips to test
 CHIPS=(
-    "nrf52840"
-    "nrf54l15"
-    "nrf9160"
-    "rp2040"
-    "rp2350a"
-    # Below are some auto-generated chips
     "stm32h743zi"
     "stm32l053r8"
     "stm32f373c8"
 )
 
 # Get the absolute path to the template directory
-TEMPLATE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TEMPLATE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 # Create a temporary directory for testing
 TEMP_DIR=$(mktemp -d)

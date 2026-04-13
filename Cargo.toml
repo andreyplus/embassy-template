@@ -1,14 +1,7 @@
 [package]
-edition = "2024"
 name = "{{project-name}}"
 version = "0.1.0"
-authors = ["{{authors}}"]
-resolver = "2"
-
-[[bin]]
-name = "{{project-name}}"
-test = false
-bench = false
+edition = "2024"
 
 [dependencies]
 defmt = "1.0"
@@ -21,48 +14,26 @@ embedded-io = "0.7"
 embedded-io-async = "0.7"
 embedded-storage = "0.3.1"
 cortex-m-rt = "0.7.3"
+cortex-m = { version = "0.7.7", features = ["critical-section-single-core"] }
 
-embassy-executor = { version = "0.9", features = ["arch-cortex-m", "executor-thread", "defmt", "executor-interrupt"] }
+embassy-executor = { version = "0.9", features = [
+    "arch-cortex-m",
+    "executor-thread",
+    "defmt",
+    "executor-interrupt",
+] }
 embassy-sync = { version = "0.7" }
-embassy-time = { version = "0.5", features = ["defmt", "defmt-timestamp-uptime"] }
-
-{% if chip contains "nrf" -%}
-cortex-m = { version = "0.7.7", features = ["critical-section-single-core"] }
-{% endif -%}
-
-{% if chip contains "nrf52" -%}
-embassy-nrf = { version = "0.9", features = ["defmt", "{{ chip }}", "time-driver-rtc1", "gpiote", "unstable-pac", "time"] }
-{% endif -%}
-
-{% if chip contains "nrf54" -%}
-embassy-nrf = { version = "0.9", features = ["defmt", "{{ chip }}-app-s", "time-driver-grtc", "gpiote", "unstable-pac", "time"] }
-{% endif -%}
-
-{% if chip contains "nrf91" -%}
-embassy-nrf = { version = "0.9", features = ["defmt", "{{ chip }}-s", "time-driver-rtc1", "gpiote", "unstable-pac", "time"] }
-embassy-net-nrf91 = { version = "0.1", features = ["defmt"]}
-embassy-net = { version = "0.7", features = ["defmt", "tcp", "proto-ipv4", "medium-ip", "dns"] }
-{% endif -%}
-
-{% if chip contains "rp2040" -%}
-cortex-m = { version = "0.7.7" }
-embassy-rp = { version = "0.9", features = ["defmt", "unstable-pac", "time-driver", "critical-section-impl", "rp2040"] }
-{% endif -%}
-
-{% if chip == "rp2350a" or chip == "rp2354a" -%}
-cortex-m = { version = "0.7.7" }
-embassy-rp = { version = "0.9", features = ["defmt", "unstable-pac", "time-driver", "critical-section-impl", "rp235xa"] }
-{% endif -%}
-
-{% if chip == "rp2350b" or chip == "rp2354b" -%}
-cortex-m = { version = "0.7.7" }
-embassy-rp = { version = "0.9", features = ["defmt", "unstable-pac", "time-driver", "critical-section-impl", "rp235xb"] }
-{% endif -%}
-
-{% if chip contains "stm32" -%}
-cortex-m = { version = "0.7.7", features = ["critical-section-single-core"] }
-embassy-stm32 = { version = "0.4", features = ["defmt", "{{ chip }}", "unstable-pac", "memory-x", "time-driver-any" ]  }
-{% endif -%}
+embassy-time = { version = "0.5", features = [
+    "defmt",
+    "defmt-timestamp-uptime",
+] }
+embassy-stm32 = { version = "0.4", features = [
+    "defmt",
+    "{{ chip }}",
+    "unstable-pac",
+    "memory-x",
+    "time-driver-any",
+] }
 
 [profile.release]
 debug = 2
