@@ -13,21 +13,21 @@ embedded-hal-async = "1.0.0"
 embedded-io = "0.7"
 embedded-io-async = "0.7"
 embedded-storage = "0.3.1"
-cortex-m-rt = "0.7.3"
+cortex-m-rt = "0.7.5"
 cortex-m = { version = "0.7.7", features = ["critical-section-single-core"] }
 
-embassy-executor = { version = "0.9", features = [
+embassy-executor = { version = "0.10", features = [
     "arch-cortex-m",
     "executor-thread",
     "defmt",
     "executor-interrupt",
 ] }
-embassy-sync = { version = "0.7" }
+embassy-sync = { version = "0.8" }
 embassy-time = { version = "0.5", features = [
     "defmt",
     "defmt-timestamp-uptime",
 ] }
-embassy-stm32 = { version = "0.4", features = [
+embassy-stm32 = { version = "0.6", features = [
     "defmt",
     "{{ chip }}",
     "unstable-pac",
