@@ -1,15 +1,10 @@
 [template]
 cargo_generate_version = ">=0.17.4"
 ignore = [
-    ".git",
-    ".github/dependabot.yml",
-    ".github/workflows/ci_docker.yml",
-    ".github/workflows/ci.yml",
-    ".github/workflows/issue_handler.yml",
+    ".github",
+    "ci.sh",
     "README.md",
-    "scripts/update-chip-choices.py",
-    "scripts/README.md",
-    "CHIP-AUTO-GEN.md",
+    "scripts",
 ]
 
 [hooks]
