@@ -11,6 +11,6 @@ async fn main(_spawner: Spawner) -> ! {
 
     loop {
         defmt::info!("Blink");
-        Timer::after(Duration::from_millis(100)).await;
+        Timer::after(Duration::from_millis(300)).await;
     }
 }

@@ -6,7 +6,7 @@
             "type": "probe-rs-debug",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "chip": "{{ probe_chip }}",
+            "chip": "{{ chip }}",
             "flashingConfig": {
                 "flashingEnabled": true,
                 "haltAfterReset": true,
@@ -24,7 +24,7 @@
             "type": "probe-rs-debug",
             "request": "attach",
             "cwd": "${workspaceFolder}",
-            "chip": "{{ probe_chip }}",
+            "chip": "{{ chip }}",
             "coreConfigs": [
                 {
                     "rttEnabled": true,
